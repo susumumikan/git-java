@@ -102,3 +102,18 @@ for (let i = 0 ;i < fruits.length; i += 1) {
 for (const fruit of fruits) {
     console.log(fruit); //配列の要素を表示
 }
+
+const banana ={
+    name: "banana Latte",
+    size: 350,
+    isHot: true,
+};
+
+for (const key in banana) {
+    console.log(key); //配列のキーを表示
+    console.log(banana[key]); //配列の値を表示
+    if (key === "size") {
+        console.log("break")
+        break; //break文でループを抜ける
+    }
+}
