@@ -74,3 +74,31 @@ function vegetbleColor(vegetable){
     // }
 }
 vegetbleColor("tomato"); // "tomato is red."が表示される
+
+//while文
+let count = 100; //カウントの初期化
+while (count < 10) {
+    console.log("while: ", count); //カウントを表示
+    count += 1; //カウントを増やす
+}
+
+let tomato_count = 100; //カウントの初期化
+do {
+    console.log("do_while: ", tomato_count); //カウントを表示
+    tomato_count += 1; //カウントを増やす
+} while (tomato_count < 10); //do while文は必ず1回は実行される
+
+//let pumpkin_count = 1; //for分にそのままいられる
+for (let pumpkin_count = 1;
+     pumpkin_count < 10;
+      pumpkin_count +=1) {
+    console.log("for: ", pumpkin_count,); //カウントを表示
+};//for文はカウントを初期化、条件を指定、カウントを増やす
+
+const fruits = ["apple", "banana","grape", "mango", "orange"]; //配列の初期化
+for (let i = 0 ;i < fruits.length; i += 1) {
+    console.log(fruits[i]);
+}
+for (const fruit of fruits) {
+    console.log(fruit); //配列の要素を表示
+}
