@@ -30,6 +30,47 @@ if (ok) {
     console.log("No"); // 表示されない
 }
 
+let username = "" || "User"; // "User"
 
+ok1 = !true; // false
+ok1 = !"hello"; // true
+ok1 = !0; // true
+ok1 = !!x; // true
+console.log(ok1); // false
 
+const hello = "Hello!2";
+{
+    //console.log(hello); // "Hello!2"はデッドゾーンエラーになる
+    const hello = "Hello!1";
+    console.log(hello);
+}
 
+//if (ton) ton = true;//()の中は定義　｛｝の中はどんな分でもOK
+
+ok3 = true; //  ok3はtrue
+ok3 = ok ? "ok" : "no"; // 三項演算子という条件演算子を使った書き方
+console.log(ok3); // "ok"が表示される
+
+function vegetbleColor(vegetable){
+    switch (vegetable){
+        case "tomato":
+            console.log("tomato is red.");
+            break;
+        case "pumpkin":
+            console.log("pumpkin is oernge.");
+            break;
+        case "onion":
+            console.log("onion is white.");
+            break;
+        default:
+            console.log("unknown vegetable.");
+    }
+    // if (vegetable === "tomato") {
+    // console.log("tomato is red.");
+    // }else if (vegetable === "pumpkin") {
+    //     console.log("pumpkin is oernge.");
+    // }else if (vegetable === "onion") {
+    //     console.log("onion is white.");
+    // }
+}
+vegetbleColor("tomato"); // "tomato is red."が表示される
