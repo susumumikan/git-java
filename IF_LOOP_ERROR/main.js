@@ -167,3 +167,16 @@ function logChocolate() {
 }
 console.log(logChocolate()); // "try"が表示される
 
+//throw new Error("エラーが発生しました"); // エラーを投げる
+
+function logChocolate2() {
+    try{
+        console.log("try"); // tryは表示されない
+        throw {message: "throw an error"}; // エラーを投げる
+
+    } catch (error) {
+        console.log("catch", error); // "catch"が表示される
+    }
+}
+console.log(logChocolate2()); // "try"が表示される
+
