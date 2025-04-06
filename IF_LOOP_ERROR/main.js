@@ -117,3 +117,53 @@ for (const key in banana) {
         break; //break文でループを抜ける
     }
 }
+const banana2 ={
+    name: "banana2 Latte",
+    size: 350,
+    isHot: true,
+};
+
+for (const key2 in banana2) {
+    if (key2 === "size") {
+        console.log("contiune")
+        continue; //continue文でループを抜ける
+    }
+    console.log(key2); //配列のキーを表示
+    console.log(banana2[key2]); //配列の値を表示
+}
+
+try{
+    console.log(chocolate); // chocolateは定義されていないのでエラーになるがtry文でエラーをキャッチする
+} catch {
+    console.log("hello"); // helloは表示される
+}
+
+
+
+try {} catch {} finally {}// finallyは必ず実行される
+
+try{
+    console.log("try"); // helloは表示される
+    console.log(chocolate); // chocolateは定義されていないのでエラーになるがtry文でエラーをキャッチする
+} catch {
+    console.log("catch"); // helloは表示される
+}
+finally {
+    console.log("finally"); // finallyは必ず実行される
+}
+
+
+function logChocolate() {
+    try{
+        console.log("try"); // helloは表示される
+        return "hello"; // chocolateは定義されていないのでエラーになるがtry文でエラーをキャッチする
+    } catch {
+        console.log("catch"); // helloは表示される
+    }
+    finally {
+        console.log("必ずfinally表示される"); // finallyは必ず実行される
+        return "returnも上書きfinally"; // finallyは必ず実行される
+    }
+}
+console.log(logChocolate()); // "try"が表示される
+
