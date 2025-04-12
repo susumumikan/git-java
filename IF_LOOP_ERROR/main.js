@@ -166,4 +166,16 @@ function logChocolate() {
     }
 }
 console.log(logChocolate()); // "try"が表示される
+sayHi = () => {
+    console.log("hello"); // helloは表示される
+}   
 
+sayHi = () => {
+    console.log("hello"); // helloは表示される
+};
+
+// sayHi = (name = "User", message) => `Hi ${name}! ${message}`; // テンプレートリテラルを修正
+// console.log(sayHi(undefined, "hello")); // 冗長ではない
+
+sayHi = (name, message = "I'm strong.") => `Hi my name is ${name}! ${message}`; // テンプレートリテラルを修正
+console.log(sayHi("susumu")); // 冗長ではない
