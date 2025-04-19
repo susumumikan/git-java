@@ -153,6 +153,7 @@
 // }
 
 
+<<<<<<< HEAD
 // function logChocolate() {
 //     try{
 //         console.log("try"); // helloは表示される
@@ -180,4 +181,31 @@
 // }
 // console.log(logChocolate2()); // "try"が表示される
 
+=======
+function logChocolate() {
+    try{
+        console.log("try"); // helloは表示される
+        return "hello"; // chocolateは定義されていないのでエラーになるがtry文でエラーをキャッチする
+    } catch {
+        console.log("catch"); // helloは表示される
+    }
+    finally {
+        console.log("必ずfinally表示される"); // finallyは必ず実行される
+        return "returnも上書きfinally"; // finallyは必ず実行される
+    }
+}
+console.log(logChocolate()); // "try"が表示される
+sayHi = () => {
+    console.log("hello"); // helloは表示される
+}   
+>>>>>>> 2d31ad5614fc6f67a733fa0d1e2d59ff11822ab7
 
+sayHi = () => {
+    console.log("hello"); // helloは表示される
+};
+
+// sayHi = (name = "User", message) => `Hi ${name}! ${message}`; // テンプレートリテラルを修正
+// console.log(sayHi(undefined, "hello")); // 冗長ではない
+
+sayHi = (name, message = "I'm strong.") => `Hi my name is ${name}! ${message}`; // テンプレートリテラルを修正
+console.log(sayHi("susumu")); // 冗長ではない
