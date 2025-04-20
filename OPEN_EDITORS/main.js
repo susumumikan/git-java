@@ -127,24 +127,77 @@
 // console.log(userInfo); //undefinedは値がerrorであることを示す
 // //undefinedは変数が宣言されているが値が設定されていないことを示す
 
-//typeof演算子を使って、変数の型を調べる方法
+//１３．typeof演算子を使って、変数の型を調べる方法
+// let useInfo = null
+// useInfo = typeof 3 //numberで返してくれる（型を調べることができる）
+// useInfo = typeof -5 //numberで返してくれる（型を調べることができる）
+// useInfo = typeof 3.2 //numberで返してくれる（型を調べることができる）
+// useInfo = typeof NaN //numberで返してくれる（型を調べることができる）
+// useInfo = typeof true //booleanで返してくれる（型を調べることができる）
+// useInfo = typeof false //booleanで返してくれる（型を調べることができる）
+// useInfo = typeof "Hello" //stringで返してくれる（型を調べることができる）
+// useInfo = typeof {name: "susumu"} //objectで返してくれる（型を調べることができる）
+// useInfo = typeof [1 ,2 ,3] //なんと配列もobjectで返してくれる（型を調べることができる）
+// useInfo = typeof undefined //undefinedで返してくれる（特別な型を調べることができる）
+// useInfo = typeof null //objectで返してくれる（nullは厳密には何もないobjectを表す）
+// console.log(useInfo)
 
-//関数の宣言
-// const value = "hello"
-// function add(a, b) { //関数の名前はadd、引数はaとb
-//     const value = a + b; //aとbを足した値をvalueに代入
-//     //関数の引数を受け取る
-//     //console.log(value); //関数の引数を表示
-//     //hello();
-//     return value; //戻り値を返す 
-//     //return文の後に書いても無視されてしまう。
-//     console.log("hello"); //return文の後に書いても無視されてしまう。    
+
+//１４．関数を使い、何度も呼び出すことができるコードのかたまりを作る方法
+//　//関数には呼ぶ出すコマンド[function]と最初にいれる
+// function add(){}  これで一つの関数となる。（）条件を　ちなみに;は不要｛｝block分と言う
+//こういう形を関数宣言という。
+// function add() { //fanctionとaddの間にはスペースが必要
+//     console.log(1 + 1) //addの計算ができる　これだけでは、表示されない関数の呼び出しが必要   
 // }
 // //関数の呼び出し
+// add(); //これで呼び出せる。大切なことはなんと何度でも呼び出せる
+// add();
+// add();
+// add(); //何度も呼び出せるコードよ塊が関数である
 
-// const returnedVaoue = add(5, 5); //関数の戻り値を受け取る
-// console.log(returnedVaoue); //関数の戻り値を表示
-// console.log(value); //関数の戻り値を表示
+//１５．「パラメータ」と「引数」
+// function add(nam1, nam2) { //（）の中に追加の情報を書く受け口がある。受け口（パラメータ）（仮引数）は「,」で区切る
+//     console.log(nam1 + nam2) //受け口の情報を入れることができる。情報は関数の呼び出しに入れる   
+// }
+// //関数の呼び出し
+// add(1 ,1); //addのパラメータ値を変更することで、関数の外から、いくつもの計算ができるようになる
+// add(3 ,4); //こっちの値の事を「引数」という
+// add(5 ,10); //パラメータに入れることで汎用性があがる。
+
+//１６．return文を使って、値を返す関数を作成する方法
+// function add(nam1, nam2) { //
+//  //関数の中では、console.log()呼び出しをせず
+//     return nam1 + nam2; //returnで返す時は、;が必要   
+//     //returnの後には何も実行されなくなるconsole.log("Hello")と書いても実行されなくなる強制的に呼び出し元に帰るconst returnedValue = add(2, 3);に行ってしまう
+//     //retuerのみだけを書くとundefinedが帰る
+// }
+// //関数の呼び出し
+// // add(2 ,3); //←ここで５という数を受け取りたいときにreturn文を使用する。書き方を変える
+// const returnedValue = add(2, 3); //returnでaddの関数がかえって来ている。ここで出る数値５は「戻り値」という
+// console.log(returnedValue);
+
+//１７．関数の位置は戦闘に巻き上げられる
+//関数の呼び出しをreturnの前に持ってきても呼び出せてしまう
+// const returnedValue = add(2, 3); 
+// console.log(returnedValue);
+// function add(nam1, nam2) { //関数宣言は、JCエンジンにより、実行前にすべて一番上に巻き上げられてから
+//     return nam1 + nam2; //実行するため、↑console.logがあっても呼び出せてしまう
+// }
+
+// //１８．変数を参照できる範囲であるscopeはこうなっている
+// //scopeとは変数の参照できる範囲の事をいう。
+// //↓valueのscopeはfunctionの関数内のみ　特定の場所からしか参照できないものをlocal変数という
+// //↓newvalueのscopeはこのjsの全ての範囲（globalscope)という変数の事をglobal変数という
+// const newValue = "Hello" //関数の外から関数の中にはアクセスはできる
+// function add(nam1, nam2) { //関数宣言の中に、変数や定数は定義ができる。
+//     console.log(newValue); //関数の外から定数や変数も表示が出る。
+//     const value = nam1 + nam2;
+//     console.log(value)
+//     return value; //↑の定数valueをreturnで戻り値に渡してあげる。
+// }
+// //console.log(Value); //関数の中で定義した変数や定数には関数の外からはアクセスできない
+// const Value = add(2, 3); 
 
 
 //CTRL + s で保存
