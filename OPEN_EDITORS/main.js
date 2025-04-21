@@ -212,3 +212,22 @@
 //shift + alt + d で行を複製
 //ctrl + d で行を複製
 
+
+
+//１８．console.logでデバッグする方法
+const value = "hello"; //①ここではまずはglobal定数としてvalueの中にhelloが入ってスタート
+console.log(value); //helloが入っている
+function add(num1, num2){ //巻き上げられる　③const value1のadd(2, 3)が入る
+    console.log(num1 , num2); //④addに２と３が入っている
+    const value = num1 + num2; //⑤value1の中身をlocal変数の力でnum1+num2が足される
+    console.log(value); //５が出力
+    return value; // ⑥add中身がadd(5)となっている
+}
+const value1 = add(2, 3); //②ここで初めて巻き上げられたadd関数を使う宣言になる。num1とnum2に２と３を渡してfunction addに渡す
+const value2 = add(5, 6); //⑦num1とnum2に５と６を渡してfunction addに渡す
+console.log(value1); //イメージ的にadd(5)をvalue1（object)の中に入れているから、console.logで５が表示
+console.log(value2);
+console.log(value); //ここではadd関数を使う宣言をしていないので、grobal定数のhelloが表示される。
+add(10, 6); //反対にいうと、これだけadd（）の中に入ることができてしまう。value1などを使ってないので関数外の使用はできないけど
+//簡単にいうと、add()にアクセスしないと巻き上げられてしまった関数は使用できない。
+
